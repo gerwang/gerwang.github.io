@@ -112,9 +112,13 @@ Th">
 <p>在<code>themes\Hacker\layout\components\article.ejs</code>最后添加</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (!index&amp;&amp;theme.mathjax.enable&amp;&amp;(!theme.mathjax.per_page||page.mathjax)) &#123; %&gt;</span><br><span class="line">  &lt;script src=&quot;&lt;%- theme.mathjax.src %&gt;&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
 <p>另外，只要看一下官方文档的这个页面<a href="https://hexo.io/docs/variables.html" target="_blank" rel="noopener">Variables</a>，就可以尝试修改ejs文件了。</p>
-<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>如果引用图片请看<a href="https://hexo.io/docs/asset-folders" target="_blank" rel="noopener">Asset Folders</a>。一个site有个公共的资源存放位置<code>source</code>，比如我把图片放在<code>source\images\narcissu.jpg</code>，然后在md中写<code>![narcissu](images/narcissu.jpg)</code>，效果如图</p>
-<p><img src="images/narcissu.jpg" alt="narcissu"></p>
-<p>如果在<code>_config.yml</code>里面设置<code>post_asset_folder: true</code>，那么每个md都在同一个目录下有个同名文件夹。比如<code>hello-world.md</code>同目录下有个文件夹<code>hello-world</code>，里面有<code>avatar.jpg</code>，那么在md里写<code><img src="/2018/10/02/hello-world/avatar.jpg" title="avatar"></code>，效果如图</p>
+<p>我们可以现在测试一下公式<script type="math/tex">lim_{1\to+\infty}P(|\frac{1}{n}\sum_i^nX_i-\mu|<\epsilon)=1, i=1,...,n</script> </p>
+<p>下面的多行公式显示起来仍然有问题，不过我现在不用多行公式的话已经够用了。</p>
+<p>\begin{align}<br>x &amp;= a +b+c+d\<br> &amp;= e +f\<br> &amp;= g<br>\end{align}</p>
+<p>如果要改进的话看<a href="https://jdhao.github.io/2017/10/06/hexo-markdown-latex-equation/" target="_blank" rel="noopener">Hexo 书写 LaTeX 公式时的一些问题及解决方法</a>。</p>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>如果引用图片请看<a href="https://hexo.io/docs/asset-folders" target="_blank" rel="noopener">Asset Folders</a>。一个site有个公共的资源存放位置<code>source</code>，比如我把图片放在<code>source\images\narcissu.jpg</code>，然后在md中写<code>![narcissu](/images/narcissu.jpg)</code>，效果如图</p>
+<p><img src="/images/narcissu.jpg" alt="narcissu"></p>
+<p>如果在<code>_config.yml</code>里面设置<code>post_asset_folder: true</code>，那么每个md都在同一个目录下有个同名文件夹。比如<code>hello-world.md</code>同目录下有个文件夹<code>hello-world</code>，里面有<code>avatar.jpg</code>，那么在md里写<code>{</code> <code>% asset_image avatar.jpg avatar%</code> <code>}</code>，效果如图</p>
 <img src="/2018/10/02/hello-world/avatar.jpg" title="avatar">
 <h5 id="TODO-站内搜索"><a href="#TODO-站内搜索" class="headerlink" title="TODO 站内搜索"></a>TODO 站内搜索</h5><p><del>待我写了足够多博客的时候吧</del></p>
 
