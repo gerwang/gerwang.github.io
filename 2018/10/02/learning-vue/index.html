@@ -105,7 +105,7 @@ UMD是一种结合AMD与CommonJS语">
 <p>为了能够正确的绑定<code>this</code>，method的值应该用<code>function() {</code>定义。在这个<code>this</code>对象里，<code>data</code>和<code>method</code>里的东西都直接成为了它的属性，如<a href="https://jsfiddle.net/gerwang/vpdqt4L2/10/" target="_blank" rel="noopener">https://jsfiddle.net/gerwang/vpdqt4L2/10/</a>。</p>
 <p>要使用<code>v-model</code>才是双向的绑定，如果关联<code>&lt;input&gt;</code>的话，不需要点提交按钮，修改是实时的。</p>
 <p>Vue的component像是在H5上还原了桌面GUI程序的设计方法。</p>
-<p><code>props</code>可以把parent作用域的变量名传到component的作用域中。注意即使component中props的变量名正好和parent域中的data的变量名相同，仍然要使用<code>v-bind</code>来绑定一下。如<a href="https://jsfiddle.net/gerwang/efxt0a83/17/" target="_blank" rel="noopener">https://jsfiddle.net/gerwang/efxt0a83/17/</a>。另外我发现，凡是用<code>v-bind</code>操作绑定的属性，都不会出现在DOM树的属性中。</p>
+<p><code>props</code>可以把parent作用域的变量名传到component的作用域中。注意即使component中props的变量名正好和parent域中的data的变量名相同，仍然要使用<code>v-bind</code>来绑定一下。如<a href="https://jsfiddle.net/gerwang/efxt0a83/17/" target="_blank" rel="noopener">https://jsfiddle.net/gerwang/efxt0a83/17/</a>。<del>另外我发现，凡是用<code>v-bind</code>操作绑定的属性，都不会出现在DOM树的属性中</del>UPD：似乎如果是HTML支持的属性，比如<code>id</code>，<code>v-bind</code>后仍然会出现在DOM中（可以在开发者工具Elements里面找到）。<a href="https://jsfiddle.net/gerwang/qz4k1pj7/5/" target="_blank" rel="noopener">https://jsfiddle.net/gerwang/qz4k1pj7/5/</a></p>
 
 	
       
