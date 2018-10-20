@@ -1,0 +1,218 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  <title>Vue组件高级 | gerw&#39;s blog | code &amp; art</title>
+
+  
+  <meta name="author" content="gerw">
+  
+
+  
+  <meta name="description" content="https://vuejs.org/v2/guide/components-registration.html
+注册使用ES2015的话，可以用import A from &amp;#39;./A.vue&amp;#39;的方法来导入单文件组件并export default出去。components:属性存放能够在">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="Vue组件高级"/>
+
+  <meta property="og:site_name" content="gerw&#39;s blog"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="gerw&#39;s blog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+
+<body>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">gerw&#39;s blog</a>
+    </h1>
+    <p class="site-description">code &amp; art</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>Vue组件高级</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/fuck/vue-component-depth.html" rel="bookmark">
+        <time class="entry-date published" datetime="2018-10-03T13:00:22.000Z">
+          2018-10-03
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        
+        
+            <p><a href="https://vuejs.org/v2/guide/components-registration.html" target="_blank" rel="noopener">https://vuejs.org/v2/guide/components-registration.html</a></p>
+<h3 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h3><p>使用ES2015的话，可以用<code>import A from &#39;./A.vue&#39;</code>的方法来导入单文件组件并<code>export default</code>出去。<code>components:</code>属性存放能够在template中使用的component对象。</p>
+<h2 id="Props"><a href="#Props" class="headerlink" title="Props"></a>Props</h2><p>props除了可以是数组，也可以是object，每个key是变量名，value是变量类型（用类的prototype表示）。</p>
+<p>如果将所有参数放在一个object里面，如<code>post</code>，那么<code>v-bind=&quot;post&quot;</code>会将post的属性分别绑定。</p>
+<p>由于parent的值在改变时会传递到children但不能反向传播，所有不要试图在children中修改props变量的值。</p>
+<p>注意在做prop validation的时候，component还没有被创建，所以<code>data</code>、<code>computed</code>等里面的东西的不可用的。</p>
+<p>对于没有被加到props列表里的属性，会自动的被加到root element上。</p>
+<p>如果template中已经有class或者style了，再提供的class或style会被Vue较智能的合并。</p>
+<p>如果设置component的<code>inheritAttrs: false</code>的话，可以用<code>$attrs</code>把不在props里的属性导向指定的element。</p>
+<h2 id="Custom-Events"><a href="#Custom-Events" class="headerlink" title="Custom Events"></a>Custom Events</h2><p>总是用kebab-case命名event。</p>
+<p>可以用<code>model</code>来指定<code>v-model</code>的行为，比如</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">model: &#123;</span><br><span class="line">    prop: <span class="string">'checked'</span>,</span><br><span class="line">    event: <span class="string">'change'</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>会将value传递给props中的checked，当emit一个change event的时候被更新。</p>
+<p>我们可以使用<code>$listeners</code>可以将component监听的事件<strong>回调</strong>导向一个指定的element。</p>
+<p>用<code>.sync</code>可以帮助我们进行双向绑定，注意<code>$emit</code>的事件名有固定的格式。一个例子见<a href="https://jsfiddle.net/gerwang/m7yuk2cn/24/" target="_blank" rel="noopener">https://jsfiddle.net/gerwang/m7yuk2cn/24/</a>。</p>
+<h2 id="Slot"><a href="#Slot" class="headerlink" title="Slot"></a>Slot</h2><p>slot可以具名。在component的template中写<code>&lt;slot name=&quot;A&quot;&gt;</code>，然后在parent环境中写<code>&lt;div slot=&quot;A&quot;&gt;</code>可以把这个元素导向同名的slot。所有无slot属性的元素都会被导向默认的不具名的<code>&lt;slot&gt;</code>上。</p>
+<p>在<code>&lt;keep-alive&gt;</code>标签中，失活的组件会被缓存起来，在再次激活时不需要创建新的element。</p>
+<h2 id="sao操作们"><a href="#sao操作们" class="headerlink" title="sao操作们"></a>sao操作们</h2><p>可以用<code>$root</code>访问根Vue实例，用<code>$parent</code>访问父级Vue实例。</p>
+<p>用<code>ref=“A”</code>指定的名字可以在子环境中用<code>$refs.A</code>来访问这个对象。</p>
+<h3 id="依赖注入"><a href="#依赖注入" class="headerlink" title="依赖注入"></a>依赖注入</h3><p>在祖先组件的<code>provide:</code>里注入变量，在子孙组件的<code>inject:</code>里填入对应的变量名，那么就可以在任意深度的子孙里使用这些变量（这不是reactive的，所以不要修改）。</p>
+<h3 id="更新控制"><a href="#更新控制" class="headerlink" title="更新控制"></a>更新控制</h3><p>使用<code>$forceUpdate</code>进行强制更新，在template中使用<code>v-once</code> attribute来让一个元素不会被更新。</p>
+
+	
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/undefined">undefined</a>, <a href="/undefined">undefined</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/undefined">undefined</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+	<section id="comment" class="comment">
+	  <div id="disqus_thread">
+	  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	  </div>
+	</section>
+
+	<script type="text/javascript">
+	var disqus_shortname = 'gerwang-github-io';
+	(function(){
+	  var dsq = document.createElement('script');
+	  dsq.type = 'text/javascript';
+	  dsq.async = true;
+	  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	}());
+	(function(){
+	  var dsq = document.createElement('script');
+	  dsq.type = 'text/javascript';
+	  dsq.async = true;
+	  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	}());
+	</script>
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2018 gerw
+    
+  </p>
+</footer>
+    
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-126826784-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+  </div>
+</div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>

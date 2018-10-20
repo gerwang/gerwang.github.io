@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  <title>Vue安装和简介 | gerw&#39;s blog | code &amp; art</title>
+
+  
+  <meta name="author" content="gerw">
+  
+
+  
+  <meta name="description" content="看一看https://vuejs.org/主页的那个视频可以快速了解vue的特色。我注意到vue有一个帮助我们调试的chrome插件，在这里vue-devtools。
+https://vuejs.org/v2/guide/installation.html
+UMD是一种结合AMD与CommonJS语">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="Vue安装和简介"/>
+
+  <meta property="og:site_name" content="gerw&#39;s blog"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="gerw&#39;s blog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+
+<body>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">gerw&#39;s blog</a>
+    </h1>
+    <p class="site-description">code &amp; art</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>Vue安装和简介</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/fuck/learning-vue.html" rel="bookmark">
+        <time class="entry-date published" datetime="2018-10-02T14:39:41.000Z">
+          2018-10-02
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        
+        
+            <p>看一看<a href="https://vuejs.org/" target="_blank" rel="noopener">https://vuejs.org/</a>主页的那个视频可以快速了解vue的特色。我注意到vue有一个帮助我们调试的chrome插件，在这里<a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a>。</p>
+<p><a href="https://vuejs.org/v2/guide/installation.html" target="_blank" rel="noopener">https://vuejs.org/v2/guide/installation.html</a></p>
+<p><a href="https://github.com/umdjs/umd" target="_blank" rel="noopener">UMD</a>是一种结合AMD与CommonJS语法的东西，如果直接在浏览器里面用<code>&lt;script&gt;</code>调用就用它。用新的webpack的话用ES Module格式的。</p>
+<p>如果在<code>new Vue</code>里面没有传<code>template</code>，在runtime时不需要compiler，这样更轻量级，更好。</p>
+<p>通过<code>process.env.NODE_ENV</code>确定打包时是开发还是生产模式。</p>
+<p><a href="https://vuejs.org/v2/guide/index.html" target="_blank" rel="noopener">https://vuejs.org/v2/guide/index.html</a></p>
+<p>Vue的特点是可以先部分使用Vue，再逐渐增加使用的范围。</p>
+<p>这里有各大数据驱动框架的对比<a href="https://vuejs.org/v2/guide/comparison.html" target="_blank" rel="noopener">https://vuejs.org/v2/guide/comparison.html</a>，等框架都用过之后再来看。</p>
+<h3 id="Vue常用directive"><a href="#Vue常用directive" class="headerlink" title="Vue常用directive"></a>Vue常用directive</h3><p><code>el</code>是绑定Component和element的CSS选择器。</p>
+<p>在属性前加<code>v-bind:</code>可以让data绑定attribute，attribute里填写的是data的变量名。</p>
+<p><code>v-if</code></p>
+<p>在使用<code>v-for</code>时要注意，是写在需要<strong>复制</strong>的那个element里面，比如</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app-4"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"todo in todos"</span>&gt;</span>&#123;&#123; todo.text &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>是写在<code>&lt;li&gt;</code>上而不是<code>&lt;ol&gt;</code>上。</p>
+<p>能被html5调用的函数存放在<code>methods</code>里面。</p>
+<p>为了能够正确的绑定<code>this</code>，method的值应该用<code>function() {</code>定义。在这个<code>this</code>对象里，<code>data</code>和<code>method</code>里的东西都直接成为了它的属性，如<a href="https://jsfiddle.net/gerwang/vpdqt4L2/10/" target="_blank" rel="noopener">https://jsfiddle.net/gerwang/vpdqt4L2/10/</a>。</p>
+<p>要使用<code>v-model</code>才是双向的绑定，如果关联<code>&lt;input&gt;</code>的话，不需要点提交按钮，修改是实时的。</p>
+<p>Vue的component像是在H5上还原了桌面GUI程序的设计方法。</p>
+<p><code>props</code>可以把parent作用域的变量名传到component的作用域中。注意即使component中props的变量名正好和parent域中的data的变量名相同，仍然要使用<code>v-bind</code>来绑定一下。如<a href="https://jsfiddle.net/gerwang/efxt0a83/17/" target="_blank" rel="noopener">https://jsfiddle.net/gerwang/efxt0a83/17/</a>。<del>另外我发现，凡是用<code>v-bind</code>操作绑定的属性，都不会出现在DOM树的属性中</del>UPD：似乎如果是HTML支持的属性，比如<code>id</code>，<code>v-bind</code>后仍然会出现在DOM中（可以在开发者工具Elements里面找到）。<a href="https://jsfiddle.net/gerwang/qz4k1pj7/5/" target="_blank" rel="noopener">https://jsfiddle.net/gerwang/qz4k1pj7/5/</a></p>
+
+	
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/undefined">undefined</a>, <a href="/undefined">undefined</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/undefined">undefined</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+	<section id="comment" class="comment">
+	  <div id="disqus_thread">
+	  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	  </div>
+	</section>
+
+	<script type="text/javascript">
+	var disqus_shortname = 'gerwang-github-io';
+	(function(){
+	  var dsq = document.createElement('script');
+	  dsq.type = 'text/javascript';
+	  dsq.async = true;
+	  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	}());
+	(function(){
+	  var dsq = document.createElement('script');
+	  dsq.type = 'text/javascript';
+	  dsq.async = true;
+	  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	}());
+	</script>
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2018 gerw
+    
+  </p>
+</footer>
+    
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-126826784-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+  </div>
+</div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>

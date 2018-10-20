@@ -1,0 +1,241 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  <title>Vue中的v-for、事件处理、表单绑定、组件基础 | gerw&#39;s blog | code &amp; art</title>
+
+  
+  <meta name="author" content="gerw">
+  
+
+  
+  <meta name="description" content="https://vuejs.org/v2/guide/list.html
+v-forv-for=&amp;quot;(item, index) in items&amp;quot;可以获得当前item的下标。
+v-for=&amp;quot;(value, key, index) in object&amp;quot;可以迭代js">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="Vue中的v-for、事件处理、表单绑定、组件基础"/>
+
+  <meta property="og:site_name" content="gerw&#39;s blog"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="gerw&#39;s blog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+
+<body>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">gerw&#39;s blog</a>
+    </h1>
+    <p class="site-description">code &amp; art</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>Vue中的v-for、事件处理、表单绑定、组件基础</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/fuck/vue-list-rending.html" rel="bookmark">
+        <time class="entry-date published" datetime="2018-10-03T08:57:37.000Z">
+          2018-10-03
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        
+        
+            <p><a href="https://vuejs.org/v2/guide/list.html" target="_blank" rel="noopener">https://vuejs.org/v2/guide/list.html</a></p>
+<h3 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h3><p><code>v-for=&quot;(item, index) in items&quot;</code>可以获得当前item的下标。</p>
+<p><code>v-for=&quot;(value, key, index) in object&quot;</code>可以迭代js对象。</p>
+<p><code>v-for</code>的默认实现中如果出现列表长度改变需要插入删除时，会就地复用原来的elements，这对于一些依赖于DOM element隐含属性的情况会出现问题。为了避免这种行为，给每个element赋上不同的<code>key</code> attribute。</p>
+<h3 id="一些限制"><a href="#一些限制" class="headerlink" title="一些限制"></a>一些限制</h3><p>有些数组的变化不能被Vue侦测到，需要用一些替代的写法：</p>
+<ul>
+<li><code>items[idx]=val</code>改为<code>Vue.set(items,idx,val)</code>或<code>items.splice(idx,1,val)</code>。</li>
+<li><code>items.length=newLen</code>改为<code>items.splice(newLen)</code>。</li>
+</ul>
+<p>其中<code>array.splice(start[, deleteCount[, item1[, item2[, ...]]]])</code>表示从<code>start</code>开始先向后删除<code>deleteCount</code>个元素，再向后插入<code>item1, item2, ...</code>。</p>
+<p>对于对象的限制：</p>
+<ul>
+<li>添加新的属性用<code>Vue.set(obj,key,value)</code>。</li>
+<li>如果要合并两个对象的属性，使用<code>vm.a=Object.assign({},vm.a,b)</code>来用一个新对象来替换旧的<code>vm.a</code>。</li>
+</ul>
+<p>如<code>v-for=&quot;idx in 10&quot;</code> 是一个integer，那么<code>idx</code>将从1循环到10。</p>
+<p>如果用<code>v-for</code>列举component，必须要提供<code>key</code> attribute。</p>
+<p>在使用component时，用<code>is=&quot;todo-item&quot;</code>相当于把TagName设成了<code>todo-item</code>。</p>
+<h2 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h2><p>如果在html的<code>@click</code>中就需要使用事件处理函数的<code>event</code>参数，可以用<code>$event</code>访问。</p>
+<h4 id="事件修饰符"><a href="#事件修饰符" class="headerlink" title="事件修饰符"></a>事件修饰符</h4><ul>
+<li><code>.stop</code>调用<code>event.stopPropagation()</code>停止传播</li>
+<li><code>.prevent</code>调用<code>event.preventDefault()</code>避免默认的行为</li>
+<li><code>.capture</code>事件先被自己处理，再交给子级handler处理</li>
+<li><code>.self</code>只有<code>event.target</code>是自己（<code>this</code>）时才触发</li>
+<li><code>.once</code>最多触发一次</li>
+<li><code>.passive</code>事件的默认行为不等待处理函数完成，而是立即触发（用来提高性能）。</li>
+</ul>
+<p>Vue里有监听键盘按键的modifier，但是我还不大会用。</p>
+<h2 id="表单处理"><a href="#表单处理" class="headerlink" title="表单处理"></a>表单处理</h2><p>使用<code>v-model</code>时，始终在javascript里面定义初值，HTML里的初值是被忽略的。</p>
+<p>在使用多选框checkbox时，<code>v-model</code>填数组名，<code>value</code>填被勾中时会往数组里加入的值。</p>
+<p><code>.number</code>修饰符可以让表单的结果被parse成float，如果不能parse的话就返回原始的值。</p>
+<h2 id="组件基础"><a href="#组件基础" class="headerlink" title="组件基础"></a>组件基础</h2><p>如果在一个HTML内用到了custom component，它的父亲一定要被包在一个<code>new Vue</code>里面（如<code>new Vue({ el: &#39;#components-demo&#39; })</code>）。</p>
+<p><code>$emit(eventName,arg)</code>可以给自己的父component发事件，其中<code>arg</code>会作为inline环境的<code>$event</code>和处理函数里的<code>event</code>参数。</p>
+<h4 id="如何让自己的component支持v-model"><a href="#如何让自己的component支持v-model" class="headerlink" title="如何让自己的component支持v-model"></a>如何让自己的component支持<code>v-model</code></h4><p>首先<code>v-model</code>作用在custom component时，本质上做了两件事：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;custom-input  v-bind:value=&quot;searchText&quot;  v-on:input=&quot;searchText = $event&quot;&gt;&lt;/custom-input&gt;</span><br></pre></td></tr></table></figure>
+<p>只要显示好上下文中的<code>value</code>变量并且在输入时触发<code>input</code>事件就可以了。</p>
+<p>一个例子在<a href="https://jsfiddle.net/gerwang/db9c7kte/24/" target="_blank" rel="noopener">https://jsfiddle.net/gerwang/db9c7kte/24/</a>，注意几点：</p>
+<ul>
+<li>Vue的component只能有一个root element。</li>
+<li><code>value</code>属性虽然没有显式绑定（隐式的通过<code>v-model</code>绑定），但是<code>props</code>里面要填<code>value</code>。</li>
+</ul>
+<p><code>&lt;slot&gt;</code>可以把传进custom component的innerHTML传到某个指定的地方。</p>
+<p>可以绑定<code>&lt;component&gt;</code>的<code>is</code>属性来动态切换组件的类型。不过我在<a href="https://jsfiddle.net/gerwang/o3nycadu/18123/" target="_blank" rel="noopener">https://jsfiddle.net/gerwang/o3nycadu/18123/</a>里添加了三个<code>&lt;input&gt;</code>，发现在每次component切换时，旧的element都被销毁了，<code>&lt;input&gt;</code>里暂存的输入数据也消失了。不过如果<code>&lt;input&gt;</code>被绑定上了变量，切换回来时应该就能重新加载上。</p>
+
+	
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/undefined">undefined</a>, <a href="/undefined">undefined</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/undefined">undefined</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+	<section id="comment" class="comment">
+	  <div id="disqus_thread">
+	  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	  </div>
+	</section>
+
+	<script type="text/javascript">
+	var disqus_shortname = 'gerwang-github-io';
+	(function(){
+	  var dsq = document.createElement('script');
+	  dsq.type = 'text/javascript';
+	  dsq.async = true;
+	  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	}());
+	(function(){
+	  var dsq = document.createElement('script');
+	  dsq.type = 'text/javascript';
+	  dsq.async = true;
+	  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	}());
+	</script>
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2018 gerw
+    
+  </p>
+</footer>
+    
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-126826784-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+  </div>
+</div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>
