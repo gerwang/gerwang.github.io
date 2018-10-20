@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  <title>学习使用vue-cli | gerw&#39;s blog | code &amp; art</title>
+
+  
+  <meta name="author" content="gerw">
+  
+
+  
+  <meta name="description" content="在安装了@vue-cli和@vue/cli-service-global之后，用vue serve可以打开一个临时服务器查看.vue或者.js文件的效果。
+创建项目时如果用vue ui可以打开浏览器，用图形化界面的形式设置创建的选项。
+
+cache-loader 会默认为 Vue/Babel/Typ">
+  
+
+  
+  
+  <meta name="keywords" content="vue">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="学习使用vue-cli"/>
+
+  <meta property="og:site_name" content="gerw&#39;s blog"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="gerw&#39;s blog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+
+<body>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">gerw&#39;s blog</a>
+    </h1>
+    <p class="site-description">code &amp; art</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>学习使用vue-cli</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/10/05/vue-cli/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-10-05T08:01:43.000Z">
+          2018-10-05
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        
+        
+            <p>在安装了<code>@vue-cli</code>和<code>@vue/cli-service-global</code>之后，用<code>vue serve</code>可以打开一个临时服务器查看<code>.vue</code>或者<code>.js</code>文件的效果。</p>
+<p>创建项目时如果用<code>vue ui</code>可以打开浏览器，用图形化界面的形式设置创建的选项。</p>
+<blockquote>
+<p><code>cache-loader</code> 会默认为 Vue/Babel/TypeScript 编译开启。文件会缓存在 <code>node_modules/.cache</code> 中——如果你遇到了编译方面的问题，记得先删掉缓存目录之后再试试看。</p>
+</blockquote>
+<ul>
+<li>[ ] 这里有配置<code>vue-cli</code>的参考<a href="https://cli.vuejs.org/zh/config/" target="_blank" rel="noopener">https://cli.vuejs.org/zh/config/</a>。</li>
+</ul>
+<blockquote>
+<p><strong>如果该依赖交付 ES5 代码，但使用了 ES6+ 特性且没有显式地列出需要的 polyfill (例如 Vuetify)：请使用 useBuiltIns: ‘entry’ 然后在入口文件添加 import ‘@babel/polyfill’。这会根据 browserslist 目标导入所有</strong> polyfill，这样你就不用再担心依赖的 polyfill 问题了，但是因为包含了一些没有用到的 polyfill 所以最终的包大小可能会增加。</p>
+</blockquote>
+<p>在<code>vue-cli-service build --modern</code>中，适合现代浏览器的ES module和兼容老浏览器的代码被同时提供给浏览器，浏览器根据自己的情况来下载和忽略。注意一点：</p>
+<blockquote>
+<p><script type="module"> 需要配合始终开启的 CORS 进行加载。这意味着你的服务器必须返回诸如 Access-Control-Allow-Origin: * 的有效的 CORS 头。如果你想要通过认证来获取脚本，可使将 crossorigin 选项设置为 use-credentials。</p>
+</blockquote>
+<p>可以用项目根目录下的<code>.env</code>文件设定在某种运行模式下的环境变量值。</p>
+</script></p></blockquote>
+	
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/软工/">软工</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/vue/">vue</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+	<section id="comment" class="comment">
+	  <div id="disqus_thread">
+	  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	  </div>
+	</section>
+
+	<script type="text/javascript">
+	var disqus_shortname = 'gerwang-github-io';
+	(function(){
+	  var dsq = document.createElement('script');
+	  dsq.type = 'text/javascript';
+	  dsq.async = true;
+	  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	}());
+	(function(){
+	  var dsq = document.createElement('script');
+	  dsq.type = 'text/javascript';
+	  dsq.async = true;
+	  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	}());
+	</script>
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2018 gerw
+    
+  </p>
+</footer>
+    
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-126826784-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+  </div>
+</div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>
