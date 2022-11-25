@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>Jingwang Ling</title>
+  
+  <meta name="author" content="Jingwang Ling">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<link rel="icon" href="images/dokkaebi.png">
+</head>
+
+<body>
+  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    <tr style="padding:0px">
+      <td style="padding:0px">
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr style="padding:0px">
+            <td style="padding:2.5%;width:63%;vertical-align:middle">
+              <p style="text-align:center">
+                <name>Jingwang Ling</name>
+              </p>
+              <p>Hi, I am a Ph.D. Candidate at <a href="https://www.tsinghua.edu.cn/en/">Tsinghua University</a>, advised by <a href="http://xufeng.site/">Prof. Feng Xu</a>. I got a bachelor degree in School of Software, Tsinghua University.
+              </p>
+              <p style="text-align:center">
+                <a href="mailto:gerwang@outlook.com">Email</a> &nbsp/&nbsp
+                <a href=".">CV</a> &nbsp/&nbsp
+                <a href="https://github.com/gerwang/">Github</a>
+              </p>
+            </td>
+            <td style="padding:2.5%;width:40%;max-width:40%">
+              <a href="images/JingwangLing.jpg"><img style="width:100%;max-width:100%" alt="profile photo" src="images/JingwangLing_circle.jpg" class="hoverZoomLink"></a>
+            </td>
+          </tr>
+        </tbody></table>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+            <td style="padding:20px;width:100%;vertical-align:middle">
+              <heading>Research</heading>
+              <p>
+                I'm interested in Neural Rendering and 3D Facial Animation. 
+              </p>
+            </td>
+          </tr>
+        </tbody></table>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+		  
+          <tr onmouseout="shadowneus_stop()" onmouseover="shadowneus_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+			          <div class="two" id='shadowneus_image'>
+                  <video  width=100% height=100% muted autoplay loop>
+                    <source src="images/shadowneus_after.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+			            </video>
+                </div>
+			          <video  width=100% height=100% muted autoplay loop>
+                  <source src="images/shadowneus_before.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+			        </div>
+              <script type="text/javascript">
+                function shadowneus_start() {
+                  document.getElementById('shadowneus_image').style.opacity = "1";
+                }
+
+                function shadowneus_stop() {
+                  document.getElementById('shadowneus_image').style.opacity = "0";
+                }
+                shadowneus_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="shadowneus/index.html">
+                <papertitle>ShadowNeuS: Neural SDF Reconstruction by Shadow Ray Supervision</papertitle>
+              </a>
+              <br>
+              <strong>Jingwang Ling</strong>,
+              <a href="https://sireer.github.io/">Zhibo Wang</a>,
+              <a href="http://xufeng.site/">Feng Xu</a>
+              <br>
+              <em>arXiv</em>, 2022
+              <br>
+              <a href="TODO">paper</a> /
+              <a href="shadowneus/index.html">project page</a> /
+              <a href="https://www.youtube.com/watch?v=rpx3qC8fixM">video</a>
+              <p></p>
+              <p>
+A joint optimization framework for estimating shape, BRDF, camera pose, and illumination from in-the-wild image collections.
+              </p>
+            </td>
+          </tr>		
+
+          <tr onmouseout="semm_stop()" onmouseover="semm_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='semm_image'>
+                  <img src='images/semm_after.png' width="160"></div>
+                <img src='images/semm_before.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function semm_start() {
+                  document.getElementById('semm_image').style.opacity = "1";
+                }
+
+                function semm_stop() {
+                  document.getElementById('semm_image').style.opacity = "0";
+                }
+                semm_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://github.com/gerwang/facial-detail-manipulation">
+                <papertitle>Structure-aware Editable Morphable Model for 3D Facial Detail Animation and Manipulation</papertitle>
+              </a>
+              <br>
+              <strong>Jingwang Ling</strong>,
+              <a href="https://sireer.github.io/">Zhibo Wang</a>,
+              Ming Lu,
+              Quan Wang,
+              <a href="https://scholar.google.com/citations?user=AerkT0YAAAAJ&hl=">Chen Qian</a>,
+              <a href="http://xufeng.site/">Feng Xu</a>
+              <br>
+              <em>European Conference on Computer Vision</em>, 2022
+              <br>
+              <a href="https://arxiv.org/abs/2207.09019">paper</a> /
+              <a href="https://github.com/gerwang/facial-detail-manipulation">code</a> /
+              <a href="https://www.youtube.com/watch?v=tONe8QzR0u0">presentation video</a> /
+              <a href="https://www.youtube.com/watch?v=rpx3qC8fixM">supplementary video</a>
+              <p></p>
+              <p>
+                A generative model of 3D facial details that can perform expression, age and wrinkle line editing.
+              </p>
+            </td>
+          </tr>		
+					<tr onmouseout="sdvae_stop()" onmouseover="sdvae_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='sdvae_image'>
+                  <img src='images/sdvae_after.png' width="160"></div>
+                <img src='images/sdvae_before.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function sdvae_start() {
+                  document.getElementById('sdvae_image').style.opacity = "1";
+                }
+
+                function sdvae_stop() {
+                  document.getElementById('sdvae_image').style.opacity = "0";
+                }
+                sdvae_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://ieeexplore.ieee.org/document/9756299">
+                <papertitle>Semantically Disentangled Variational Autoencoder for Modeling 3D Facial Details</papertitle>
+              </a>
+              <br>
+              <strong>Jingwang Ling</strong>,
+              <a href="https://sireer.github.io/">Zhibo Wang</a>,
+              Ming Lu,
+              Quan Wang,
+              <a href="https://scholar.google.com/citations?user=AerkT0YAAAAJ&hl=">Chen Qian</a>,
+              <a href="http://xufeng.site/">Feng Xu</a>
+              <br>
+              <em>IEEE Transactions on Visualization and Computer Graphics</em>, 2022
+              <br>
+              <a href="http://xufeng.site/publications/2022/ljw-TVCG_3D_Facial_Details.pdf">paper</a> /
+              <a href="http://xufeng.site/publications/2022/ljw-TCCG%203D_Facial_Details.mp4">video</a> /
+              <a href="https://www.youtube.com/watch?v=fXBk1UGoOaY">ISMAR 22 video</a> /
+              <a href="https://ieeexplore.ieee.org/document/9756299">HTML</a>
+              <p></p>
+              <p>
+A joint optimization framework for estimating shape, BRDF, camera pose, and illumination from in-the-wild image collections.
+              </p>
+            </td>
+          </tr>		
+
+        </tbody></table>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:0px">
+              <br>
+              <p style="text-align:right;font-size:small;">
+                The website's template is from <a href="https://jonbarron.info/">Jon Barron</a>. 
+              </p>
+            </td>
+          </tr>
+        </tbody></table>
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>

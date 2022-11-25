@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>ShadowNeuS</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="../images/dokkaebi.png">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <b>ShadowNeuS:</b> Neural SDF Reconstruction by <br>Shadow Ray Supervision <br>
+                <small>
+								arXiv 2022
+                </small>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="..">
+                          Jingwang Ling
+                        </a>
+                        </br>Tsinghua University
+                    </li>
+                    <li>
+                        <a href="https://sireer.github.io/">
+                            Zhibo Wang
+                        </a>
+                        </br>SenseTime Research
+                    </li>
+                    <li>
+                        <a href="http://xufeng.site/">
+                          Feng Xu
+                        </a>
+                        </br>Tsinghua University
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="row">
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="TODO">
+                            <image src="img/shadow_paper_image.png" height="60px">
+                                <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://youtu.be/zBSH-k9GbV4">
+                            <image src="img/youtube.png" height="60px">
+                                <h4><strong>Video</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href=".">
+                            <image src="img/github.png" height="60px">
+                                <h4><strong>Code (Coming soon)</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href=".">
+                            <image src="img/database_icon.png" height="60px">
+                                <h4><strong>Dataset (Coming soon)</strong></h4>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+                    By supervising camera rays between a scene and multi-view image planes, NeRF reconstructs a neural scene representation for the task of novel view synthesis.
+                    On the other hand, shadow rays between the light source and the scene have yet to be considered.
+                    Therefore, we propose a novel shadow ray supervision scheme that optimizes both the samples along the ray and the ray location.
+                    By supervising shadow rays, we successfully reconstruct a neural SDF of the scene from single-view pure shadow or RGB images under multiple lighting conditions. 
+                    Given single-view binary shadows, we train a neural network to reconstruct a complete scene not limited by the camera's line of sight.
+                    By further modeling the correlation between the image colors and the shadow rays, our technique can also be effectively extended to RGB inputs.
+                    We compare our method with previous works on challenging tasks of shape reconstruction from single-view binary shadow or RGB images and observe significant improvements.
+                    The code and data will be released.
+                </p>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Video
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:56.25%;">
+                        <iframe src="https://www.youtube.com/embed/rpx3qC8fixM" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Citation
+                </h3>
+                <div class="form-group col-md-10 col-md-offset-1">
+                    <!-- <textarea id="bibtex" class="form-control" readonly>
+@misc{ling2022shadowneus,
+    title={ShadowNeuS: Neural SDF Reconstruction by Shadow Ray Supervision}, 
+    author={Jingwang Ling and Zhibo Wang and Feng Xu},
+    year={2022},
+    eprint={TODO},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV}
+}
+</textarea> -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
