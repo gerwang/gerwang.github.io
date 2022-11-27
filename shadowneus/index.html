@@ -100,12 +100,18 @@
                 <h3>
                     Abstract
                 </h3>
+                <image src="img/section3_6.png" class="img-responsive" alt="overview"><br>
                 <p class="text-justify">
                     By supervising camera rays between a scene and multi-view image planes, NeRF reconstructs a neural scene representation for the task of novel view synthesis.
                     On the other hand, shadow rays between the light source and the scene have yet to be considered.
-                    Therefore, we propose a novel shadow ray supervision scheme that optimizes both the samples along the ray and the ray location.
-                    By supervising shadow rays, we successfully reconstruct a neural SDF of the scene from single-view pure shadow or RGB images under multiple lighting conditions. 
+                    Therefore, we propose a novel shadow ray supervision scheme that optimizes both the samples along the ray and the ray location. By supervising shadow rays, we successfully reconstruct a neural SDF of the scene from single-view pure shadow or RGB images under multiple lighting conditions. 
+                </p>
+                <image src="img/chair_teaser_caption_v2.png" class="img-responsive" alt="overview"><br>
+                <p class="text-justify">
                     Given single-view binary shadows, we train a neural network to reconstruct a complete scene not limited by the camera's line of sight.
+                </p>
+                <image src="img/lego_teaser_caption_v2.png" class="img-responsive" alt="overview"><br>
+                <p class="text-justify">
                     By further modeling the correlation between the image colors and the shadow rays, our technique can also be effectively extended to RGB inputs.
                     We compare our method with previous works on challenging tasks of shape reconstruction from single-view binary shadow or RGB images and observe significant improvements.
                     The code and data will be released.
@@ -128,7 +134,60 @@
             </div>
         </div>
 
-            
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Method Overview
+                </h3>
+                
+                <video width="100%" controls>
+                    <source src="img/method_overview.mp4" type="video/mp4" />
+                  </video>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Real Data Results
+                </h3>
+                
+                <video width="100%" autoplay loop muted controls>
+                    <source src="img/real_data_results.mp4" type="video/mp4" />
+                  </video>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Environment Relighting
+                </h3>
+                
+                <video width="100%" autoplay loop muted>
+                    <source src="img/env_mic.mp4" type="video/mp4" />
+                  </video>
+                <video width="100%" autoplay loop muted>
+                    <source src="img/env_hotdog.mp4" type="video/mp4" />
+                </video>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Material Editing
+                </h3>
+                
+                <video width="100%" autoplay loop muted>
+                    <source src="img/material_lego.mp4" type="video/mp4" />
+                  </video>
+                <video width="100%" autoplay loop muted>
+                    <source src="img/material_chair.mp4" type="video/mp4" />
+                </video>
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
