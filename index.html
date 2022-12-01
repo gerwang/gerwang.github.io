@@ -223,6 +223,94 @@
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr>
+          <td style="padding:20px;width:100%;vertical-align:middle">
+            <heading>Interesting Projects</heading>
+          </td>
+        </tr>
+      </tbody></table>
+      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    
+        <tr onmouseout="playgwent_stop()" onmouseover="playgwent_start()">
+          <td style="padding:20px;width:25%;vertical-align:middle">
+            <div class="one">
+              <div class="two" id='playgwent_image'>
+                <video  width=100% height=100% muted autoplay loop>
+                  <source src="images/playgwent_after.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <img src='images/playgwent_before.png' width="160">
+            </div>
+            <script type="text/javascript">
+              function playgwent_start() {
+                document.getElementById('playgwent_image').style.opacity = "1";
+              }
+
+              function playgwent_stop() {
+                document.getElementById('playgwent_image').style.opacity = "0";
+              }
+              playgwent_stop()
+            </script>
+          </td>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://gerwang.xyz/gwent/">
+              <papertitle>PlayGwent</papertitle>
+            </a>
+            <br>
+            <em>Qt Programming</em>, 2017
+            <br>
+            <a href="https://www.youtube.com/watch?v=MBvUwIbSK4g">Video</a> /
+            <a href="data/PlayGwent/PlayGwent_win64.zip">Download (Windows)</a> /
+            <a href="data/PlayGwent/PlayGwent_linux64.zip">Download (Linux)</a> /
+            <a href="https://gerwang.xyz/gwent/">Sign up</a> /
+            <a href="https://github.com/gerwang/PlayGwent">Code</a>
+            <p></p>
+            <p>
+              An online multiplayer Gwent card game.
+            </p>
+          </td>
+        </tr>	
+        <tr onmouseout="battlecity_stop()" onmouseover="battlecity_start()">
+          <td style="padding:20px;width:25%;vertical-align:middle">
+            <div class="one">
+              <div class="two" id='battlecity_image'>
+                <video  width=100% height=100% muted autoplay loop>
+                  <source src="images/battlecity_after.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <img src='images/battlecity_before.png' width="160">
+            </div>
+            <script type="text/javascript">
+              function battlecity_start() {
+                document.getElementById('battlecity_image').style.opacity = "1";
+              }
+
+              function battlecity_stop() {
+                document.getElementById('battlecity_image').style.opacity = "0";
+              }
+              battlecity_stop()
+            </script>
+          </td>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://github.com/gerwang/BattleCity">
+              <papertitle>BattleCity</papertitle>
+            </a>
+            <br>
+            <em>Java Programming</em>, 2017
+            <br>
+            <a href="https://www.youtube.com/watch?v=Ty2p7pzdwy0">Video</a> /
+            <a href="data/BattleCity/BattleCity.jar">Download (JAR)</a> /
+            <a href="https://github.com/gerwang/BattleCity">Code</a>
+            <p></p>
+            <p>
+              A LAN multiplayer tank game.
+            </p>
+          </td>
+        </tr>	
+      </tbody></table>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
             <td style="padding:0px">
               <br>
               <p style="text-align:right;font-size:small;">
@@ -234,6 +322,7 @@
       </td>
     </tr>
   </table>
+  
 </body>
 
 </html>
