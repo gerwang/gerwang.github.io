@@ -89,6 +89,49 @@
               </td>
             </tr>		
 
+            <tr onmouseout="meshbasedavatar_stop()" onmouseover="meshbasedavatar_start()">
+              <td style="padding:20px;width:25%;vertical-align:middle">
+                <div class="one">
+                  <div class="two" id='meshbasedavatar_image'>
+                    <video  width=100% height=100% muted autoplay loop>
+                      <source src="images/jiawei_mingxin_cvpr2024.png" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  <img src='images/jiawei_mingxin_cvpr2024.png' width="160">
+                </div>
+                <script type="text/javascript">
+                  function meshbasedavatar_start() {
+                    document.getElementById('meshbasedavatar_image').style.opacity = "1";
+                  }
+  
+                  function meshbasedavatar_stop() {
+                    document.getElementById('meshbasedavatar_image').style.opacity = "0";
+                  }
+                  meshbasedavatar_stop()
+                </script>
+              </td>
+              <td style="padding:20px;width:75%;vertical-align:middle">
+                <a href="https://github.com/grignarder/high-quality-blendshape-generation">
+                  <papertitle>High-Quality Mesh Blendshape Generation from Face Videos via Neural Inverse Rendering</papertitle>
+                </a>
+                <br>
+                Xin Ming*, 
+                Jiawei Li*,
+                <strong>Jingwang Ling</strong>,
+                <a href="https://zhanglbthu.github.io/">Libo Zhang</a>,
+                <a href="http://xufeng.site/">Feng Xu</a>
+                <br>
+                <em>European Conference on Computer Vision</em>, 2024
+                <br>
+                <a href="https://arxiv.org/abs/2401.08398">paper</a> /
+                <a href="https://github.com/grignarder/high-quality-blendshape-generation">code</a>
+                <p></p>
+                <p>
+                </p>
+              </td>
+            </tr>		
+
           <tr onmouseout="shadowneus_stop()" onmouseover="shadowneus_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
