@@ -44,6 +44,46 @@
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 		  
+          <tr onmouseout="the_guiding_stars_stop()" onmouseover="the_guiding_stars_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='the_guiding_stars_image'>
+                  <img src='images/the-guiding-stars.png' width="160">
+                </div>
+                <img src='images/the-guiding-stars.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function the_guiding_stars_start() {
+                  document.getElementById('the_guiding_stars_image').style.opacity = "1";
+                }
+
+                function the_guiding_stars_stop() {
+                  document.getElementById('the_guiding_stars_image').style.opacity = "0";
+                }
+                the_guiding_stars_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://illumiart.net/the-guiding-stars/">
+                <papertitle>Guiding-Based Importance Sampling for Walk on Stars</papertitle>
+              </a>
+              <br>
+              <a href="http://illumiart.net/">Tianyu Huang</a>,
+              <strong>Jingwang Ling</strong>,
+              <a href="https://shuangz.com/">Shuang Zhao</a>,
+              <a href="http://xufeng.site/">Feng Xu</a>
+              <br>
+              <em>ACM SIGGRAPH (conference track full paper)</em>, 2025
+              <br>
+              <a href="https://arxiv.org/abs/2410.18944">paper</a> /
+              <a href="https://illumiart.net/the-guiding-stars/">project page</a> /
+              <a href="https://github.com/tyanyuy3125/elaina">code</a>
+              <p></p>
+              <p>
+              </p>
+            </td>
+          </tr>		
+
             <tr onmouseout="nerfemitter_stop()" onmouseover="nerfemitter_start()">
               <td style="padding:20px;width:25%;vertical-align:middle">
                 <div class="one">
