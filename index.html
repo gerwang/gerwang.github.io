@@ -20,15 +20,24 @@
               <p style="text-align:center">
                 <name>Jingwang Ling</name>
               </p>
-              <p>Hi, I am a graduate student at <a href="https://www.tsinghua.edu.cn/en/">Tsinghua University</a>, advised by Prof. <a href="http://xufeng.site/">Feng Xu</a>. I also work with Prof. <a href="https://shuangz.com/">Shuang Zhao</a>. I got a bachelor degree in School of Software, Tsinghua University.
+              <p>
+                Hi! I’m a Ph.D. student in Computer Science at 
+                <a href="https://cs.illinois.edu/">University of Illinois Urbana-Champaign</a> (UIUC), 
+                specializing in computer graphics and vision. 
+                I am advised by Prof. <a href="https://shuangz.com/">Shuang Zhao</a>. 
+                I received my bachelor’s degree from 
+                School of Software, <a href="https://www.tsinghua.edu.cn/en/"></a>Tsinghua University</a>, 
+                where I was fortunate to be advised by Prof. <a href="http://xufeng.site/">Feng Xu</a>.
               </p>
               <p style="text-align:center">
                 <a href="mailto:gerwang@outlook.com">Email</a> &nbsp/&nbsp
-                <a href="https://github.com/gerwang/">Github</a>
+                <a href="https://github.com/gerwang/">Github</a> &nbsp/&nbsp
+                <a href="https://scholar.google.com/citations?user=MSNxQo0AAAAJ">Google Scholar</a> &nbsp/&nbsp
+                <a href="https://linkedin.com/in/jingwang-ling/">LinkedIn</a>
               </p>
             </td>
             <td style="padding:2.5%;width:40%;max-width:40%">
-              <a href="images/JingwangLing.jpg"><img style="width:100%;max-width:100%" alt="profile photo" src="images/JingwangLing_circle.jpg" class="hoverZoomLink"></a>
+              <a href="images/JingwangLing.png"><img style="width:100%;max-width:100%" alt="profile photo" src="images/JingwangLing_circle.png" class="hoverZoomLink"></a>
             </td>
           </tr>
         </tbody></table>
@@ -37,13 +46,55 @@
             <td style="padding:20px;width:100%;vertical-align:middle">
               <heading>Research</heading>
               <p>
-                I'm interested in various topics in Computer Graphics and Vision, with experience in Physics-based Inverse Rendering and 3D Facial Animation. 
+                My research focuses on digitalizing the 3D world from images through physics-based inverse rendering. To achieve this, I integrate three key components: accurate physics-based rendering models to ensure physical correctness, generative priors to introduce data-driven regularization, and real-world measurements to anchor reconstruction in observation.
               </p>
             </td>
           </tr>
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 		  
+          <tr onmouseout="teeth_capture_stop()" onmouseover="teeth_capture_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='teeth_capture_image'>
+                  <video  width=100% height=100% muted autoplay loop>
+                    <source src="images/teeth_capture_after.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <img src='images/teeth_capture_before.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function teeth_capture_start() {
+                  document.getElementById('teeth_capture_image').style.opacity = "1";
+                }
+
+                function teeth_capture_stop() {
+                  document.getElementById('teeth_capture_image').style.opacity = "0";
+                }
+                teeth_capture_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://iccv.thecvf.com/virtual/2025/poster/2031">
+                <papertitle>Teeth Reconstruction and Performance Capture Using a Phone Camera</papertitle>
+              </a>
+              <br>
+              Weixi Zheng,
+              <strong>Jingwang Ling</strong>,
+              <a href="https://sireer.github.io/">Zhibo Wang</a>,
+              Quan Wang,
+              <a href="http://xufeng.site/">Feng Xu</a>
+              <br>
+              <em>International Conference on Computer Vision</em>, 2025 <font color="red"><strong>(Oral Presentation)</strong></font>
+              <br>
+              <a href=".">code (coming soon)</a>
+              <p></p>
+              <p>
+              </p>
+            </td>
+          </tr>		
+
           <tr onmouseout="the_guiding_stars_stop()" onmouseover="the_guiding_stars_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
@@ -556,7 +607,7 @@
             <td style="padding:0px">
               <br>
               <p style="text-align:right;font-size:small;">
-                The website's template is from <a href="https://jonbarron.info/">Jon Barron</a>. 
+                The website's template is borrowed from <a href="https://jonbarron.info/">Jon Barron</a>. Thank you!
               </p>
             </td>
           </tr>
