@@ -53,6 +53,87 @@
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 		  
+          <tr onmouseout="diffusionreg_stop()" onmouseover="diffusionreg_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='diffusionreg_image'>
+                  <video width=100% height=100% muted autoplay loop playsinline>
+                    <source src="images/diffusion_regularized_rotate.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <img src='images/diffusion_regularized_thumb.png' style="max-width:160px;max-height:160px;">
+              </div>
+              <script type="text/javascript">
+                function diffusionreg_start() {
+                  document.getElementById('diffusionreg_image').style.opacity = "1";
+                }
+
+                function diffusionreg_stop() {
+                  document.getElementById('diffusionreg_image').style.opacity = "0";
+                }
+                diffusionreg_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="diffusion-regularized-inverse-rendering/">
+                <papertitle>Diffusion-Based Material Regularization for Physics-Based Inverse Rendering</papertitle>
+              </a>
+              <br>
+              <strong>Jingwang Ling</strong>,
+              <a href="https://winmad.github.io/">Lifan Wu</a>,
+              <a href="http://xufeng.site/">Feng Xu</a>,
+              <a href="https://shuangz.com/">Shuang Zhao</a>
+              <br>
+              <em>European Conference on Computer Vision</em>, 2026
+              <br>
+              <a href="diffusion-regularized-inverse-rendering/">project page</a> /
+              <a href="https://youtu.be/LzAcJlIaD4E">video</a> /
+              <a href=".">code (coming soon)</a>
+              <p></p>
+              <p>
+                We treat a diffusion model's material predictions as a similarity kernel for regularization, jointly reconstructing geometry, materials, and illumination that relight faithfully.
+              </p>
+            </td>
+          </tr>
+
+          <tr onmouseout="samplematching_stop()" onmouseover="samplematching_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='samplematching_image'>
+                  <img src='images/sample_matching_thumb.jpg' width="160"></div>
+                <img src='images/sample_matching_thumb.jpg' width="160">
+              </div>
+              <script type="text/javascript">
+                function samplematching_start() {
+                  document.getElementById('samplematching_image').style.opacity = "1";
+                }
+
+                function samplematching_stop() {
+                  document.getElementById('samplematching_image').style.opacity = "0";
+                }
+                samplematching_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://auroraryan0301.github.io/samplematching/">
+                <papertitle>Sample Matching for Joint Extinction Gradient Estimation in Differentiable Volume Rendering</papertitle>
+              </a>
+              <br>
+              <a href="https://auroraryan0301.github.io/">Ruihan Yu</a>,
+              <a href="https://bulbaberry.xyz/about/">Yu-Chen Wang</a>,
+              <strong>Jingwang Ling</strong>,
+              <a href="http://xufeng.site/">Feng Xu</a>,
+              <a href="https://shuangz.com/">Shuang Zhao</a>
+              <br>
+              <em>ACM Transactions on Graphics (SIGGRAPH)</em>, 2026 <font color="red"><strong>(Best Paper Award Honorable Mention)</strong></font>
+              <br>
+              <a href="https://auroraryan0301.github.io/samplematching/">project page</a>
+              <p></p>
+              <p>
+              </p>
+            </td>
+          </tr>
+
           <tr onmouseout="teeth_capture_stop()" onmouseover="teeth_capture_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
@@ -163,7 +244,7 @@
                 </a>
                 <br>
                 <strong>Jingwang Ling</strong>,
-                Ruihan Yu,
+                <a href="https://auroraryan0301.github.io/">Ruihan Yu</a>,
                 <a href="http://xufeng.site/">Feng Xu</a>,
                 Chun Du,
                 <a href="https://shuangz.com/">Shuang Zhao</a>
@@ -205,8 +286,8 @@
                   <papertitle>High-Quality Mesh Blendshape Generation from Face Videos via Neural Inverse Rendering</papertitle>
                 </a>
                 <br>
-                Xin Ming*, 
-                Jiawei Li*,
+                <a href="https://github.com/grignarder">Xin Ming</a>*,
+                <a href="https://openreview.net/profile?id=~Jiawei_Li15">Jiawei Li</a>*,
                 <strong>Jingwang Ling</strong>,
                 <a href="https://zhanglbthu.github.io/">Libo Zhang</a>,
                 <a href="http://xufeng.site/">Feng Xu</a>
@@ -422,7 +503,7 @@
               <br>
               <a href="https://sireer.github.io/">Zhibo Wang</a>,
               <strong>Jingwang Ling</strong>,
-              Chengzeng Feng,
+              <a href="https://openreview.net/profile?id=~Chengzeng_Feng1">Chengzeng Feng</a>,
               <a href="https://lu-m13.github.io/">Ming Lu</a>,
               <a href="http://xufeng.site/">Feng Xu</a>
               <br>
@@ -439,13 +520,8 @@
           </tr>	
 
         </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-          <td style="padding:20px;width:100%;vertical-align:middle">
-            <heading>Interesting Projects</heading>
-          </td>
-        </tr>
-      </tbody></table>
+        <details>
+          <summary style="cursor:pointer; padding:20px;"><heading>Interesting Projects</heading></summary>
       <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
     
         <tr onmouseout="faceinwall_stop()" onmouseover="faceinwall_start()">
@@ -602,6 +678,7 @@
           </td>
         </tr>	
       </tbody></table>
+        </details>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr>
             <td style="padding:0px">

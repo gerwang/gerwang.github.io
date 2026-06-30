@@ -109,12 +109,19 @@ name {
   width: 160px;
   height: 160px;
   position: relative;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .two {
   width: 160px;
   height: 160px;
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: opacity .2s ease-in-out;
   -moz-transition: opacity .2s ease-in-out;
   -webkit-transition: opacity .2s ease-in-out;
